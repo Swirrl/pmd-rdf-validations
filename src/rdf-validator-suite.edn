@@ -2,7 +2,7 @@
              "01_SELECT_Observation_Has_At_Most_1_Dataset.sparql"
              "02_SELECT_Dataset_Has_At_Least_1_DSD.sparql"
              "02_SELECT_Dataset_Has_At_Most_1_DSD.sparql"
-             "03_SELECT_DSD_Has_At_Least_1_Measure.sparql"
+             ;"03_SELECT_DSD_Has_At_Least_1_Measure.sparql"
              "04_SELECT_Dimension_Has_At_Least_1_Range.sparql"
              "05_SELECT_Concept_Dimension_Has_At_Least_1_CodeList.sparql"
              "06_SELECT_Invalid_DSD_Component_Marked_As_Optional.sparql"
@@ -17,7 +17,7 @@
              "14_SELECT_Dataset_Without_MeasureDimension_Obs_Has_Value.sparql"
              "15_SELECT_Dataset_With_MeasureDimension_Obs_Has_Value_For_Measure.sparql"
              "16_SELECT_Dataset_With_MeasureDimension_Obs_Has_Exactly_1_Value.sparql"
-             "17_SELECT_All_Measures_Present_In_Measures_Dimension_Cube.sparql"
+             ;"17_SELECT_All_Measures_Present_In_Measures_Dimension_Cube.sparql"
              "18_SELECT_Observations_In_Slices_Must_Be_In_Slices_Dataset.sparql"
              "19_SELECT_Collection_Values_Must_Be_From_CodeList.sparql"
              "19_SELECT_ConceptScheme_Values_Must_Be_From_CodeList.sparql"]}
