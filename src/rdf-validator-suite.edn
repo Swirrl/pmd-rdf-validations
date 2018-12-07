@@ -2,7 +2,7 @@
              "01_SELECT_Observation_Has_At_Most_1_Dataset.sparql"
              "02_SELECT_Dataset_Has_At_Least_1_DSD.sparql"
              "02_SELECT_Dataset_Has_At_Most_1_DSD.sparql"
-             ;"03_SELECT_DSD_Has_At_Least_1_Measure.sparql"
+             "03_SELECT_DSD_Has_At_Least_1_Measure.sparql"
              "04_SELECT_Dimension_Has_At_Least_1_Range.sparql"
              "05_SELECT_Concept_Dimension_Has_At_Least_1_CodeList.sparql"
              "06_SELECT_Invalid_DSD_Component_Marked_As_Optional.sparql"
