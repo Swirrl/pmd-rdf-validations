@@ -1,0 +1,9 @@
+# IC-7. Slice Keys must be declared
+
+# Every qb:SliceKey must be associated with a qb:DataStructureDefinition.
+
+ASK {
+    ?sliceKey a qb:SliceKey .
+    FILTER NOT EXISTS { [a qb:DataStructureDefinition] qb:sliceKey ?sliceKey }
+}
+    

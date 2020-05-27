@@ -1,0 +1,25 @@
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+
+#! PMDCUBE-Validation. All measures present
+# Base RDF Data Cube IC-14
+# In a qb:DataSet which does NOT use a Measure dimension then each individual qb:Observation must have a value for every declared 
+measure. 
+# Note: PMD tends to use the measure dimension approach for multi-measure cubes
+
+SELECT ?obs {
+    # Observation in a non-measureType cube
+    
+    ?dataset qb:structure ?dsd .
+    FILTER NOT EXISTS { ?dsd qb:component/qb:dimension qb:measureType }
+    ?obs qb:dataSet/qb:structure ?dsd .
+
+    # verify every measure is present
+    ?dsd qb:component/qb:measure ?measure .
+    FILTER NOT EXISTS { ?obs ?measure [] }
+}
+    

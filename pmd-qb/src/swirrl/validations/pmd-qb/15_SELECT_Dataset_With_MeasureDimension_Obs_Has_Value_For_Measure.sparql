@@ -1,0 +1,28 @@
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> 
+
+#! PMDCUBE-Validation. Measure dimension consistent
+# Base RDF Data Cube IC-5
+# In a qb:DataSet which uses a Measure dimension then each qb:Observation must have a value for the measure corresponding to its given qb:measureType. 
+# In PMD data, measure values can have an option obsStatus marker to note a reason for a missing measure value 
+SELECT ?obs
+FROM <http://example.org/graph/observations-multi-measure-invalid-ic15> 
+# FROM <http://example.org/graph/observations-multi-measure-valid-suppressed> 
+WHERE {
+    # Observation in a measureType-cube
+    ?obs qb:dataSet/qb:structure ?dsd .
+    # That uses the measureType dimension 
+    ?dsd qb:component/qb:dimension qb:measureType .
+    # Observation measure
+    ?obs qb:measureType ?measure .
+    
+    # Do not include any observations that are using an #obsStatus marker to note some reason for a missing measure value 
+    MINUS {
+        ?obs sdmx-attribute:obsStatus ?marker 
+    }
+    
+    # Must have value for its measureType
+    FILTER NOT EXISTS { ?obs ?measure [] }
+    
+    
+}

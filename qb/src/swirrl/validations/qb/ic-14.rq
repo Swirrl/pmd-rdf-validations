@@ -1,0 +1,15 @@
+# IC-14. All measures present
+
+# In a qb:DataSet which does not use a Measure dimension then each individual qb:Observation must have a value for every declared measure.
+
+ASK {
+    # Observation in a non-measureType cube
+    ?obs qb:dataSet/qb:structure ?dsd .
+    FILTER NOT EXISTS { ?dsd qb:component/qb:componentProperty qb:measureType }
+
+    # verify every measure is present
+    ?dsd qb:component/qb:componentProperty ?measure .
+    ?measure a qb:MeasureProperty;
+    FILTER NOT EXISTS { ?obs ?measure [] }
+}
+    
