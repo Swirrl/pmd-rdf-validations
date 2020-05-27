@@ -21,13 +21,20 @@ used against RDF data using the [RDF Validator](https://github.com/Swirrl/rdf-va
         swirrl/validations.pmd4 {:git/url "git@github.com:Swirrl/pmd-rdf-validations.git"
                                   :sha "63479f200a7c3d1b0e63bc43b2617181644c846b"
                                   :deps/manifest :deps
-                                  :deps/root "pmd4"}}
+                                  :deps/root "pmd4"}
+        ;;; Exclude any suites you don't want by commenting them out
+        ;;; or removing them.
+        
+        ;;swirrl/validations.qb {:git/url "git@github.com:Swirrl/pmd-rdf-validations.git"
+        ;;                       :sha "63479f200a7c3d1b0e63bc43b2617181644c846b"
+        ;;                       :deps/manifest :deps
+        ;;                       :deps/root "qb"}                                  
+        }
  :aliases {:rdf-validator {:extra-deps { swirrl/rdf-validator {:git/url "https://github.com/Swirrl/rdf-validator.git"
-                                                          :sha "fd848fabc5718f876f99ee4ee5a3f89ea8529571"
-                                                          }}
-                      :main-opts ["-m" "rdf-validator.core"]}
-           :local/validations {:classpath-overrides {swirrl/validations.pmdqb "/path/to/local/github/projects/pmd-rdf-validations/pmd-qb/src"
-           																																										swirrl/validations.pmd4 "/path/to/local/github/projects/pmd-rdf-validations/pmd4/src"}}
+                                                               :sha "fd848fabc5718f876f99ee4ee5a3f89ea8529571"}}
+                           :main-opts ["-m" "rdf-validator.core"]}
+           :local/validations {:classpath-overrides {swirrl/validations.pmdqb "/path/to/local/repo/pmd-rdf-validations/pmd-qb/src"
+                                                     swirrl/validations.pmd4 "/path/to/local/repo/pmd-rdf-validations/pmd4/src"}}
                      }
  }
 ```
