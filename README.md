@@ -38,7 +38,7 @@ used against RDF data using the [RDF Validator](https://github.com/Swirrl/rdf-va
 
 The above `deps.edn` configuration file declaratively specifies dependencies on two suites of SPARQL query validations.  These two suites happen to located at different paths within the same git repository, though they could easily be in separate repositories.  It additionally then specifies a dependency on the [RDF Validator](https://github.com/Swirrl/rdf-validator) itself under the `:rdf-validator` alias.
 
-Running the command `clojure -A:rdf-validator ,,,` will then automatically cause the dependencies to be fetched, cached for future use, put on the JVMs classpath before finally executing the [RDF Validator](https://github.com/Swirrl/rdf-validator) application.
+Running the command `clojure -A:rdf-validator <args>` will then automatically cause the dependencies to be fetched, cached for future use and put on the JVMs classpath before finally executing the [RDF Validator](https://github.com/Swirrl/rdf-validator) application with the specified suites.
 
 As the [RDF Validator](https://github.com/Swirrl/rdf-validator) supports finding and loading validation suites from the java classpath the dependent suites will then be executed.  The validator defines a simple manifest for discovering and executing suites specified in this manner.
 
