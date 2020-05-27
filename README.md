@@ -31,7 +31,7 @@ used against RDF data using the [RDF Validator](https://github.com/Swirrl/rdf-va
  }
 ```
 
-3. Navigate to the directory containing your newly created `deps.edn` file in the command line and run `clj -A:rdf-validator --endpoint http://{server}:{port}/your-db-name/query` 
+3. Navigate to the directory containing your newly created `deps.edn` file in the command line and run `clojure -A:rdf-validator --endpoint http://{server}:{port}/your-db-name/query` 
 
 ### Trouble shooting
 
