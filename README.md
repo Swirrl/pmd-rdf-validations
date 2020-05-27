@@ -14,11 +14,11 @@ used against RDF data using the [RDF Validator](https://github.com/Swirrl/rdf-va
 
 ```
 {:deps {swirrl/validations.pmdqb {:git/url "git@github.com:Swirrl/pmd-rdf-validations.git"
-                                  :sha "d59c744116b178d6b0f5436b8d511b467d8a59d4"
+                                  :sha "63479f200a7c3d1b0e63bc43b2617181644c846b"
                                   :deps/manifest :deps
                                   :deps/root "pmd-qb"}
         swirrl/validations.pmd4 {:git/url "git@github.com:Swirrl/pmd-rdf-validations.git"
-                                  :sha "d59c744116b178d6b0f5436b8d511b467d8a59d4"
+                                  :sha "63479f200a7c3d1b0e63bc43b2617181644c846b"
                                   :deps/manifest :deps
                                   :deps/root "pmd4"}}
  :aliases {:rdf-validator {:extra-deps { swirrl/rdf-validator {:git/url "https://github.com/Swirrl/rdf-validator.git"
