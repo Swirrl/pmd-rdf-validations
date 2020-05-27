@@ -1,0 +1,31 @@
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX ui:      <http://www.w3.org/ns/ui#>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX dct:     <http://purl.org/dc/terms/> 
+PREFIX pmdcat:  <http://publishmydata.com/pmdcat#>
+
+SELECT ?dataset {
+    ?dataset a pmdcat:Dataset .
+    FILTER(
+        NOT EXISTS {
+            SELECT ?dataset {
+                ?dataset a pmdcat:Dataset .
+                ?dataset pmdcat:datasetContents ?contents .
+                ?contents a ?type .
+                FILTER(?type IN (
+                    pmdcat:Dataset, 
+                    pmdcat:FileDataset, 
+                    pmdcat:URLDataset, 
+                    pmdcat:LinkedDataset, 
+                    pmdcat:DataCube, 
+                    pmdcat:GraphDatasetContents, 
+                    pmdcat:Ontology, 
+                    pmdcat:ConceptScheme
+                ))
+            }
+        }
+    )
+
+}

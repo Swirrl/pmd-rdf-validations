@@ -1,0 +1,15 @@
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX ui:      <http://www.w3.org/ns/ui#>
+
+SELECT ?concept  (COUNT(?sp) AS ?count) ?scheme
+WHERE {
+   { 
+    ?concept a skos:Concept ;
+             ui:sortPriority ?sp .
+    ?concept skos:inScheme ?scheme .
+  }
+}
+GROUP BY ?concept ?scheme
+HAVING (?count > 1)
+ORDER BY ?scheme ?concept

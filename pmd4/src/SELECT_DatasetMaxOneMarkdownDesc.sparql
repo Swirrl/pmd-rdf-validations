@@ -1,0 +1,15 @@
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX ui:      <http://www.w3.org/ns/ui#>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX dct:     <http://purl.org/dc/terms/> 
+PREFIX pmdcat:  <http://publishmydata.com/pmdcat#>
+
+SELECT ?dataset (COUNT(?o) AS ?count) 
+WHERE {
+    ?dataset a pmdcat:Dataset .
+    ?dataset pmdcat:markdownDescription ?o
+}
+GROUP BY ?dataset
+HAVING (?count > 1)

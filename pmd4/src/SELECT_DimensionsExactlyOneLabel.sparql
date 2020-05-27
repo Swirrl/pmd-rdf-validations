@@ -1,0 +1,30 @@
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX ui:      <http://www.w3.org/ns/ui#>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX dct:     <http://purl.org/dc/terms/> 
+PREFIX pmdcat:  <http://publishmydata.com/pmdcat#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?dim ?count {
+    {
+        SELECT ?dim (COUNT(?lbl1) AS ?count) 
+        WHERE {
+            ?dim a qb:DimensionProperty .
+            ?dim rdfs:label ?lbl1, ?lbl2 .
+            FILTER(?lbl1 != ?lbl2)
+        }
+        GROUP BY ?dim
+        HAVING (?count > 1)
+    }
+    UNION {
+        SELECT ?dim ?count {
+            ?dim a qb:DimensionProperty .
+            FILTER NOT EXISTS {
+                ?dim rdfs:label ?o 
+            }
+            BIND(0 AS ?count)
+        }
+    }
+}

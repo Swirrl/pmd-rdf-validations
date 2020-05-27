@@ -1,0 +1,13 @@
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX ui:      <http://www.w3.org/ns/ui#>
+
+SELECT ?concept (COUNT(?n) AS ?count) 
+        WHERE {
+        { 
+            ?concept a skos:Concept .
+            ?concept skos:notation ?n .
+        }
+        }
+        GROUP BY ?concept
+        HAVING (?count > 1)

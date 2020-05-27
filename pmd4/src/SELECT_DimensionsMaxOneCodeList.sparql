@@ -1,0 +1,12 @@
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+
+SELECT (?dim AS ?dimWithTooManyCodeLists) ?cl1 ?cl2
+WHERE {
+   { 
+    # Check has just one codeList
+    ?dim a qb:DimensionProperty ;
+        qb:codeList ?cl1, ?cl2 .
+    FILTER (?cl1 != ?cl2)
+  }
+}
+ORDER BY ?dim ?cl1

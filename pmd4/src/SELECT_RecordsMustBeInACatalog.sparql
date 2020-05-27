@@ -1,0 +1,13 @@
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX ui:      <http://www.w3.org/ns/ui#>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+
+SELECT ?record {
+    ?record a dcat:CatalogRecord .
+    FILTER NOT EXISTS {
+        ?catalog dcat:record ?record
+    }
+    
+}

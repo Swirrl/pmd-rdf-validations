@@ -1,0 +1,28 @@
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX ui:      <http://www.w3.org/ns/ui#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?concept ?count {
+    {
+        SELECT ?concept (COUNT(?lbl) AS ?count) 
+        WHERE {
+        { 
+            ?concept a skos:Concept .
+            ?concept rdfs:label ?lbl 
+        }
+        }
+        GROUP BY ?concept
+        HAVING (?count > 1)
+    }
+    UNION {
+        SELECT ?concept ?count
+        WHERE {
+            ?concept a skos:Concept .
+            FILTER NOT EXISTS {
+                ?concept rdfs:label ?lbl .
+            }
+            BIND(0 AS ?count)
+        }
+    }
+}
