@@ -5,50 +5,21 @@ PREFIX qb:      <http://purl.org/linked-data/cube#>
 PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 PREFIX owl:     <http://www.w3.org/2002/07/owl#>
 
-SELECT (?obs AS ?obsMissingValueForMeasure) ?measure  
-WHERE {
+#! PMDCUBE-Validation. All measures present
+# Base RDF Data Cube IC-14
+# In a qb:DataSet which does NOT use a Measure dimension then each individual qb:Observation must have a value for every declared 
+measure. 
+# Note: PMD tends to use the measure dimension approach for multi-measure cubes
 
-	{
-	  	SELECT ?cp {
-	  	{
-	  		BIND(qb:componentProperty as ?cp)
-	  	}
-	  	UNION
-	  	{ 	SELECT ?cp 
-	  		WHERE { 
-	  			?cp rdfs:subPropertyOf+ qb:componentProperty . }  
-			}
-	  	}
-	}
-
+SELECT ?obs {
     # Observation in a non-measureType cube
+    
+    ?dataset qb:structure ?dsd .
+    FILTER NOT EXISTS { ?dsd qb:component/qb:dimension qb:measureType }
     ?obs qb:dataSet/qb:structure ?dsd .
-    FILTER NOT EXISTS { 
-    	?dsd qb:component ?component .
-    	?component ?cp qb:measureType 
-	}
 
     # verify every measure is present
-    ?dsd qb:component ?component . 
-    ?component ?cp ?measure .
-    ?measure a qb:MeasureProperty;
+    ?dsd qb:component/qb:measure ?measure .
     FILTER NOT EXISTS { ?obs ?measure [] }
 }
-
-#! IC-14. All measures present - In a qb:DataSet which does not use a Measure dimension then each individual qb:Observation must have a value for every declared measure. 
-
-#######################################################################
-####                 ORIGINAL ASK QUERY FROM SPEC  IC-14           ####
-# 
-# ASK {
-#     # Observation in a non-measureType cube
-#     ?obs qb:dataSet/qb:structure ?dsd .
-#     FILTER NOT EXISTS { ?dsd qb:component/qb:componentProperty qb:measureType }
-# 
-#     # verify every measure is present
-#     ?dsd qb:component/qb:componentProperty ?measure .
-#     ?measure a qb:MeasureProperty;
-#     FILTER NOT EXISTS { ?obs ?measure [] }
-# }
-# 
-#######################################################################
+    

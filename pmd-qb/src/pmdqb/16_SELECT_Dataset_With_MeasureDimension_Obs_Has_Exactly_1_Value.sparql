@@ -5,39 +5,33 @@ PREFIX qb:      <http://purl.org/linked-data/cube#>
 PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 PREFIX owl:     <http://www.w3.org/2002/07/owl#>
 
-SELECT (?obs AS ?obsWithIncorrectNumberOfMeasures) 
+#! PMDCUBE-Validation. Single measure on measure dimension observation
+# Base RDF Data Cube IC-16
+# In a qb:DataSet which uses a Measure dimension then each qb:Observation must only have a value for one measure 
+# (by IC-15 this will be the measure corresponding to its qb:measureType). 
+# In PMD data, measure values can have an option obsStatus marker to note a reason for a missing measure value 
+SELECT ?obs
 WHERE {
-
     {
-        SELECT ?cp {
-        {
-            BIND(qb:componentProperty as ?cp)
-        }
-        UNION
-        {   SELECT ?cp 
-            WHERE { 
-                ?cp rdfs:subPropertyOf+ qb:componentProperty . }  
-            }
-        }
+        # Observation with measureType
+        ?obs qb:dataSet/qb:structure ?dsd ;
+            qb:measureType ?measure ;
+            ?omeasure [] .
+        # Any measure on the observation
+        ?dsd qb:component/qb:dimension qb:measureType ;
+            qb:component/qb:measure ?omeasure .
+        # Must be the same as the measureType
+        FILTER (?omeasure != ?measure)
     }
-
-    # Observation with measureType
-    ?obs qb:dataSet/qb:structure ?dsd ;
-         qb:measureType ?measure ;
-         ?omeasure [] .
-    # Any measure on the observation
-    ?dsd qb:component/qb:componentProperty qb:measureType ;
-         qb:component/qb:componentProperty ?omeasure .
-    ?omeasure a qb:MeasureProperty .
-    # Must be the same as the measureType
-    FILTER (?omeasure != ?measure)
+    UNION
+    {
+        # Observations with more than one value of the same measure type
+        SELECT ?obs (COUNT(?val) AS ?count ) {
+            ?obs qb:dataSet/qb:structure ?dsd ;
+                 qb:measureType ?measure .
+            ?obs ?measure ?val .
+        } GROUP BY ?obs
+        HAVING (?count > 1)
+    }
 }
-
-#! IC-16. Single measure on measure dimension observation - In a qb:DataSet which uses a Measure dimension then each qb:Observation must only have a value for one measure (by IC-15 this will be the measure corresponding to its qb:measureType). 
-
-#TODO
-#######################################################################
-####                 ORIGINAL ASK QUERY FROM SPEC  IC-16           ####
-# 
-# 
-#######################################################################
+LIMIT 10    
