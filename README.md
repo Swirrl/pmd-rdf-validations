@@ -3,8 +3,11 @@
 A collection of RDF validation queries ready to be
 used against RDF data using the [RDF Validator](https://github.com/Swirrl/rdf-validator).
 
+- **pmd-qb** - a set of validations based on the RDF Data Cube IC validations, adjusted slightly to fit the way the RDF Cube has been implemented within Publish My Data
+- **pmd4** - as set of validations to check data relating to the catalog structure and other data expectations for PMD4 to function as expected
+- **qb** - a verbatim copy of the IC validations from the [RDF Data Cube specification](https://www.w3.org/TR/vocab-data-cube/#h3_wf-rules).
 
-## Simple Quick Start:
+## Quick Start:
 
 1. Install clojure cli tools using `brew install clojure/tools/clojure` (see [clojure cli docs](https://clojure.org/guides/getting_started#_clojure_installer_and_cli_tools) for other installations)
 2. Create a new file named `deps.edn` (location is unimportant) with the following contents:
@@ -30,3 +33,6 @@ used against RDF data using the [RDF Validator](https://github.com/Swirrl/rdf-va
 
 3. Navigate to the directory containing your newly created `deps.edn` file in the command line and run `clj -A:rdf-validator --endpoint http://{server}:{port}/your-db-name/query` 
 
+### Trouble shooting
+
+- Make sure that the `:sha` values in your `deps.edn` match the latest commit SHAs for this [pmd-rdf-validations repo](https://github.com/Swirrl/pmd-rdf-validations/commits/master) and the [rdf-validator repo](https://github.com/Swirrl/rdf-validator/commits/master) respectively.
