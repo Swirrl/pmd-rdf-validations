@@ -1,9 +1,0 @@
-# IC-10. Slice dimensions complete
-
-# Every qb:Slice must have a value for every dimension declared in its qb:sliceStructure.
-
-ASK {
-  ?slice qb:sliceStructure [qb:componentProperty ?dim] .
-  FILTER NOT EXISTS { ?slice ?dim [] }
-}
-    

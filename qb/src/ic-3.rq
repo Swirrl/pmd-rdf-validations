@@ -1,8 +1,0 @@
-# IC-3. DSD includes measure
-
-# Every qb:DataStructureDefinition must include at least one declared measure. 
-
-ASK {
-  ?dsd a qb:DataStructureDefinition .
-  FILTER NOT EXISTS { ?dsd qb:component [qb:componentProperty [a qb:MeasureProperty]] }
-}

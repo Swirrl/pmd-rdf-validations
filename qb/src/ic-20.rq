@@ -1,8 +1,0 @@
-ASK {
-    ?obs qb:dataSet/qb:structure/qb:component/qb:componentProperty ?dim .
-    ?dim a qb:DimensionProperty ;
-        qb:codeList ?list .
-    ?list a qb:HierarchicalCodeList .
-    ?obs ?dim ?v .
-    FILTER NOT EXISTS { ?list qb:hierarchyRoot/<$p>* ?v }
-}
