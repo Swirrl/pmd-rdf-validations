@@ -6,8 +6,6 @@ PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
 # In a qb:DataSet which uses a Measure dimension then each qb:Observation must have a value for the measure corresponding to its given qb:measureType. 
 # In PMD data, measure values can have an option obsStatus marker to note a reason for a missing measure value 
 SELECT ?obs
-FROM <http://example.org/graph/observations-multi-measure-invalid-ic15> 
-# FROM <http://example.org/graph/observations-multi-measure-valid-suppressed> 
 WHERE {
     # Observation in a measureType-cube
     ?obs qb:dataSet/qb:structure ?dsd .
