@@ -33,8 +33,8 @@ used against RDF data using the [RDF Validator](https://github.com/Swirrl/rdf-va
  :aliases {:rdf-validator {:extra-deps { swirrl/rdf-validator {:git/url "https://github.com/Swirrl/rdf-validator.git"
                                                                :sha "fd848fabc5718f876f99ee4ee5a3f89ea8529571"}}
                            :main-opts ["-m" "rdf-validator.core"]}
-           :local/validations {:classpath-overrides {swirrl/validations.pmdqb "/path/to/local/repo/pmd-rdf-validations/pmd-qb/src"
-                                                     swirrl/validations.pmd4 "/path/to/local/repo/pmd-rdf-validations/pmd4/src"}}
+           :local/validations {:classpath-overrides {swirrl/validations.pmdqb "/path/to/local/repo/pmd-rdf-validations/pmd-qb"
+                                                     swirrl/validations.pmd4 "/path/to/local/repo/pmd-rdf-validations/pmd4"}}
                      }
  }
 ```
