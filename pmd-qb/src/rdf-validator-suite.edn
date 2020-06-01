@@ -1,23 +1,69 @@
-{:pmd-qb ["swirrl/validations/pmd-qb/01_SELECT_Observation_Has_At_Least_1_Dataset.sparql"
-          "swirrl/validations/pmd-qb/01_SELECT_Observation_Has_At_Most_1_Dataset.sparql"
-          "swirrl/validations/pmd-qb/02_SELECT_Dataset_Has_At_Least_1_DSD.sparql"
-          "swirrl/validations/pmd-qb/02_SELECT_Dataset_Has_At_Most_1_DSD.sparql"
-          "swirrl/validations/pmd-qb/03_SELECT_DSD_Has_At_Least_1_Measure.sparql"
-          "swirrl/validations/pmd-qb/04_SELECT_Dimension_Has_At_Least_1_Range.sparql"
-          "swirrl/validations/pmd-qb/05_SELECT_Concept_Dimension_Has_At_Least_1_CodeList.sparql"
-          "swirrl/validations/pmd-qb/06_SELECT_Invalid_DSD_Component_Marked_As_Optional.sparql"
-          "swirrl/validations/pmd-qb/07_SELECT_SliceKey_Has_At_Least_1_DSD.sparql"
-          "swirrl/validations/pmd-qb/08_SELECT_SliceKey_ComponentProperty_Not_Declared_As_Component_On_DSD.sparql"
-          "swirrl/validations/pmd-qb/09_SELECT_SliceKey_Has_At_Least_1_SliceStructure.sparql"
-          "swirrl/validations/pmd-qb/09_SELECT_SliceKey_Has_At_Most_1_SliceStructure.sparql"
-          "swirrl/validations/pmd-qb/10_SELECT_Slice_Dimensions_Have_Value.sparql"
-          "swirrl/validations/pmd-qb/11_SELECT_Obs_Dimensions_Have_Value.sparql"
-          "swirrl/validations/pmd-qb/12_SELECT_Duplicate_Observations.sparql"
-          "swirrl/validations/pmd-qb/13_SELECT_Obs_Required_Attributes_Have_Value.sparql"
-          "swirrl/validations/pmd-qb/14_SELECT_Dataset_Without_MeasureDimension_Obs_Has_Value.sparql"
-          "swirrl/validations/pmd-qb/15_SELECT_Dataset_With_MeasureDimension_Obs_Has_Value_For_Measure.sparql"
-          "swirrl/validations/pmd-qb/16_SELECT_Dataset_With_MeasureDimension_Obs_Has_Exactly_1_Value.sparql"
-          "swirrl/validations/pmd-qb/17_SELECT_All_Measures_Present_In_Measures_Dimension_Cube.sparql"
-          "swirrl/validations/pmd-qb/18_SELECT_Observations_In_Slices_Must_Be_In_Slices_Dataset.sparql"
-          "swirrl/validations/pmd-qb/19_SELECT_Collection_Values_Must_Be_From_CodeList.sparql"
-          "swirrl/validations/pmd-qb/19_SELECT_ConceptScheme_Values_Must_Be_From_CodeList.sparql"]}
+{:pmd-qb [{:source "swirrl/validations/pmd-qb/01_SELECT_Observation_Has_At_Least_1_Dataset.sparql"
+				:type :sparql
+				:name "ic1a"}
+			{:source "swirrl/validations/pmd-qb/01_SELECT_Observation_Has_At_Most_1_Dataset.sparql"
+				:type :sparql
+				:name "ic1b"}
+			{:source "swirrl/validations/pmd-qb/02_SELECT_Dataset_Has_At_Least_1_DSD.sparql"
+				:type :sparql
+				:name "ic2a"}
+			{:source "swirrl/validations/pmd-qb/02_SELECT_Dataset_Has_At_Most_1_DSD.sparql"
+				:type :sparql
+				:name "ic2b"}
+			{:source "swirrl/validations/pmd-qb/03_SELECT_DSD_Has_At_Least_1_Measure.sparql"
+				:type :sparql
+				:name "ic3"}
+			{:source "swirrl/validations/pmd-qb/04_SELECT_Dimension_Has_At_Least_1_Range.sparql"
+				:type :sparql
+				:name "ic4"}
+			{:source "swirrl/validations/pmd-qb/05_SELECT_Concept_Dimension_Has_At_Least_1_CodeList.sparql"
+				:type :sparql
+				:name "ic5"}
+			{:source "swirrl/validations/pmd-qb/06_SELECT_Invalid_DSD_Component_Marked_As_Optional.sparql"
+				:type :sparql
+				:name "ic6"}
+			{:source "swirrl/validations/pmd-qb/07_SELECT_SliceKey_Has_At_Least_1_DSD.sparql"
+				:type :sparql
+				:name "ic7"}
+			{:source "swirrl/validations/pmd-qb/08_SELECT_SliceKey_ComponentProperty_Not_Declared_As_Component_On_DSD.sparql"
+				:type :sparql
+				:name "ic8"}
+			{:source "swirrl/validations/pmd-qb/09_SELECT_SliceKey_Has_At_Least_1_SliceStructure.sparql"
+				:type :sparql
+				:name "ic9a"}
+			{:source "swirrl/validations/pmd-qb/09_SELECT_SliceKey_Has_At_Most_1_SliceStructure.sparql"
+				:type :sparql
+				:name "ic9b"}
+			{:source "swirrl/validations/pmd-qb/10_SELECT_Slice_Dimensions_Have_Value.sparql"
+				:type :sparql
+				:name "ic10"}
+			{:source "swirrl/validations/pmd-qb/11_SELECT_Obs_Dimensions_Have_Value.sparql"
+				:type :sparql
+				:name "ic11"}
+			{:source "swirrl/validations/pmd-qb/12_SELECT_Duplicate_Observations.sparql"
+				:type :sparql
+				:name "ic12"}
+			{:source "swirrl/validations/pmd-qb/13_SELECT_Obs_Required_Attributes_Have_Value.sparql"
+				:type :sparql
+				:name "ic13"}
+			{:source "swirrl/validations/pmd-qb/14_SELECT_Dataset_Without_MeasureDimension_Obs_Has_Value.sparql"
+				:type :sparql
+				:name "ic14"}
+			{:source "swirrl/validations/pmd-qb/15_SELECT_Dataset_With_MeasureDimension_Obs_Has_Value_For_Measure.sparql"
+				:type :sparql
+				:name "ic15"}
+			{:source "swirrl/validations/pmd-qb/16_SELECT_Dataset_With_MeasureDimension_Obs_Has_Exactly_1_Value.sparql"
+				:type :sparql
+				:name "ic16"}
+			{:source "swirrl/validations/pmd-qb/17_SELECT_All_Measures_Present_In_Measures_Dimension_Cube.sparql"
+				:type :sparql
+				:name "ic17"}
+			{:source "swirrl/validations/pmd-qb/18_SELECT_Observations_In_Slices_Must_Be_In_Slices_Dataset.sparql"
+				:type :sparql
+				:name "ic18"}
+			{:source "swirrl/validations/pmd-qb/19_SELECT_Collection_Values_Must_Be_From_CodeList.sparql"
+				:type :sparql
+				:name "ic19a"}
+			{:source "swirrl/validations/pmd-qb/19_SELECT_ConceptScheme_Values_Must_Be_From_CodeList.sparql"
+				:type :sparql
+				:name "ic19b"}]}

@@ -1,21 +1,83 @@
-{:qb ["swirrl/validations/qb/ic-1.rq"
-										"swirrl/validations/qb/ic-2.rq"
-										"swirrl/validations/qb/ic-3.rq"
-										"swirrl/validations/qb/ic-4.rq"
-										"swirrl/validations/qb/ic-5.rq"
-										"swirrl/validations/qb/ic-6.rq"
-										"swirrl/validations/qb/ic-7.rq"
-										"swirrl/validations/qb/ic-8.rq"
-										"swirrl/validations/qb/ic-9.rq"
-										"swirrl/validations/qb/ic-10.rq"
-										"swirrl/validations/qb/ic-11.rq"
-										"swirrl/validations/qb/ic-12.rq"
-										"swirrl/validations/qb/ic-13.rq"
-										"swirrl/validations/qb/ic-14.rq"
-										"swirrl/validations/qb/ic-15.rq"
-										"swirrl/validations/qb/ic-16.rq"
-										"swirrl/validations/qb/ic-17.rq"
-										"swirrl/validations/qb/ic-18.rq"
-										"swirrl/validations/qb/ic-19.rq"
-										"swirrl/validations/qb/ic-20.rq"
-										"swirrl/validations/qb/ic-21.rq"]}
+{:qb [{:source "swirrl/validations/qb/ic-1.rq"
+				:type :sparql 
+				:name "ic1"}
+{
+				:source "swirrl/validations/qb/ic-2.rq"
+				:type :sparql 
+				:name "ic2"}
+{
+				:source "swirrl/validations/qb/ic-3.rq"
+				:type :sparql 
+				:name "ic3"}
+{
+				:source "swirrl/validations/qb/ic-4.rq"
+				:type :sparql 
+				:name "ic4"}
+{
+				:source "swirrl/validations/qb/ic-5.rq"
+				:type :sparql 
+				:name "ic5"}
+{
+				:source "swirrl/validations/qb/ic-6.rq"
+				:type :sparql 
+				:name "ic6"}
+{
+				:source "swirrl/validations/qb/ic-7.rq"
+				:type :sparql 
+				:name "ic7"}
+{
+				:source "swirrl/validations/qb/ic-8.rq"
+				:type :sparql 
+				:name "ic8"}
+{
+				:source "swirrl/validations/qb/ic-9.rq"
+				:type :sparql 
+				:name "ic9"}
+{
+				:source "swirrl/validations/qb/ic-10.rq"
+				:type :sparql 
+				:name "ic10"}
+{
+				:source "swirrl/validations/qb/ic-11.rq"
+				:type :sparql 
+				:name "ic11"}
+{
+				:source "swirrl/validations/qb/ic-12.rq"
+				:type :sparql 
+				:name "ic12"}
+{
+				:source "swirrl/validations/qb/ic-13.rq"
+				:type :sparql 
+				:name "ic13"}
+{
+				:source "swirrl/validations/qb/ic-14.rq"
+				:type :sparql 
+				:name "ic14"}
+{
+				:source "swirrl/validations/qb/ic-15.rq"
+				:type :sparql 
+				:name "ic15"}
+{
+				:source "swirrl/validations/qb/ic-16.rq"
+				:type :sparql 
+				:name "ic16"}
+{
+				:source "swirrl/validations/qb/ic-17.rq"
+				:type :sparql 
+				:name "ic17"}
+{
+				:source "swirrl/validations/qb/ic-18.rq"
+				:type :sparql 
+				:name "ic18"}
+{
+				:source "swirrl/validations/qb/ic-19.rq"
+				:type :sparql 
+				:name "ic1"}
+{
+				:source "swirrl/validations/qb/ic-20.rq"
+				:type :sparql 
+				:name "ic1"}
+{
+				:source "swirrl/validations/qb/ic-21.rq"
+				:type :sparql 
+				:name "ic1"}]}
