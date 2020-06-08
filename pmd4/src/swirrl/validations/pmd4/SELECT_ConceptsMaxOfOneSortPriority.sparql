@@ -13,3 +13,4 @@ WHERE {
 GROUP BY ?concept ?scheme
 HAVING (?count > 1)
 ORDER BY ?scheme ?concept
+LIMIT 10
