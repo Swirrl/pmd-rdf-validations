@@ -94,10 +94,6 @@
 					:type :sparql
 					:name "DimensionsExactlyOneLabel"}
 {
-					:source "swirrl/validations/pmd4/SELECT_DimensionsMaxOneCodeList.sparql"
-					:type :sparql
-					:name "DimensionsMaxOneCodeList"}
-{
 					:source "swirrl/validations/pmd4/SELECT_DimensionsMustHaveConceptsInCodeList.sparql"
 					:type :sparql
 					:name "DimensionsMustHaveConceptsInCodeList"}
