@@ -15,18 +15,18 @@ used against RDF data using the [RDF Validator](https://github.com/Swirrl/rdf-va
 ```clojure
 {:deps {;; NOTE each dep here is a validation suite
         swirrl/validations.pmdqb {:git/url "git@github.com:Swirrl/pmd-rdf-validations.git"
-                                  :sha "63479f200a7c3d1b0e63bc43b2617181644c846b"
+                                  :sha "ea669ddb996ba56a7af0dbf5a196c24b08324632"
                                   :deps/manifest :deps
                                   :deps/root "pmd-qb"}
         swirrl/validations.pmd4 {:git/url "git@github.com:Swirrl/pmd-rdf-validations.git"
-                                  :sha "63479f200a7c3d1b0e63bc43b2617181644c846b"
+                                  :sha "ea669ddb996ba56a7af0dbf5a196c24b08324632"
                                   :deps/manifest :deps
                                   :deps/root "pmd4"}
         ;;; Exclude any suites you don't want by commenting them out
         ;;; or removing them.
         
         ;;swirrl/validations.qb {:git/url "git@github.com:Swirrl/pmd-rdf-validations.git"
-        ;;                       :sha "63479f200a7c3d1b0e63bc43b2617181644c846b"
+        ;;                       :sha "ea669ddb996ba56a7af0dbf5a196c24b08324632"
         ;;                       :deps/manifest :deps
         ;;                       :deps/root "qb"}                                  
         }
