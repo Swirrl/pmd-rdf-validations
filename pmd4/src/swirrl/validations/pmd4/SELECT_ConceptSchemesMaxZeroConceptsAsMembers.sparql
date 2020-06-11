@@ -10,5 +10,4 @@ SELECT ?scheme
         ?scheme skos:member ?concept .
     }
 }
-GROUP BY ?scheme
 LIMIT 10
