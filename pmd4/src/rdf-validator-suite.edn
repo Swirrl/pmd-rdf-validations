@@ -1,5 +1,8 @@
 {:pmd4
- [{:source "swirrl/validations/pmd4/SELECT_CatalogEntryInAtMostOneCatalog.sparql"
+ [{:source "swirrl/validations/pmd4/SELECT_AllAttributesAndDimensionsMustHaveCodeList.sparql"
+	 :type :sparql
+	 :name "AllAttributesAndDimensionsMustHaveCodeList"}
+	{:source "swirrl/validations/pmd4/SELECT_CatalogEntryInAtMostOneCatalog.sparql"
    :type :sparql
    :description "A catalog entry should be in at most be in one catalog."
    :name "CatalogEntryInAtMostOneCatalog"}
