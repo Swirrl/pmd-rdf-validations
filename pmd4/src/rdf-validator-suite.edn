@@ -62,6 +62,10 @@
 					:type :sparql
 					:name "DatasetExactlyOneModifiedDate"}
 {
+					:source "swirrl/validations/pmd4/SELECT_DatasetGraphContainsContents.sparql"
+					:type :sparql
+					:name "DatasetGraphContainsContents"}
+{
 					:source "swirrl/validations/pmd4/SELECT_DatasetGraphIsIri.sparql"
 					:type :sparql
 					:name "DatasetGraphIsIri"}
