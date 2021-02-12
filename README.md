@@ -14,7 +14,11 @@ used against RDF data using the [RDF Validator](https://github.com/Swirrl/rdf-va
 
 ## Usage
 
-Run `clojure -M:pmd4:validate -e http://my/sparql/endpoint`
+Change into the repos working directory and run:
+
+```
+$ clojure -M:pmd4:validate -e http://my/sparql/endpoint
+```
 
 Inspecting this projects `deps.edn` will show that we define the aliases `:pmd4` (for the pmd4 suite), `:pmd-qb` (for the pmd-qb) whilst `:validate` pulls in the swirrl validation tool.
 
