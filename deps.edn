@@ -1,0 +1,14 @@
+{:aliases {:pmd4 {:extra-deps {swirrl/validations.pmd4 {:local/root "pmd4"}}}
+           :pmd-qb {:extra-deps {swirrl/validations.pmd-qb {:local/root "pmd-qb"}}}
+
+           :validate {:extra-deps { swirrl/rdf-validator {:git/url "https://github.com/Swirrl/rdf-validator.git"
+                                                          :sha "5ecc5fa5c696cfa8ac5bb99c250e5b0c9b083f85"
+                                                          }
+                                   ;; Import log4j2 as the logging backend
+                                   org.apache.logging.log4j/log4j-api {:mvn/version "2.11.1"}
+                                   org.apache.logging.log4j/log4j-core {:mvn/version "2.11.1"}
+                                   org.apache.logging.log4j/log4j-slf4j-impl {:mvn/version "2.11.1"}
+
+                                   }
+                      :extra-paths ["."] ;; for log4j2.xml
+                      :main-opts ["-m" "rdf-validator.core"]}}}
