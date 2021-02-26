@@ -1,5 +1,6 @@
 {:aliases {:pmd4 {:extra-deps {swirrl/validations.pmd4 {:local/root "pmd4"}}}
            :pmd-qb {:extra-deps {swirrl/validations.pmd-qb {:local/root "pmd-qb"}}}
+           :misc {:extra-deps {swirrl/validations.pmd-qb {:local/root "misc"}}}
 
            :validate {:extra-deps { swirrl/rdf-validator {:git/url "https://github.com/Swirrl/rdf-validator.git"
                                                           :sha "5ecc5fa5c696cfa8ac5bb99c250e5b0c9b083f85"

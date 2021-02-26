@@ -1,0 +1,20 @@
+# Test that datatype URIs are valid http/https URIs.
+#
+# This is primarily to catch issues where prefixes such as
+# ^^xsd:dateTime are incorrectly written as ^^<xsd:dateTime>.
+#
+# valid datatype URIs should be expanded in this output and not
+# printed as CURIs, so any CURIs here are mistakes.
+#
+# In order to prevent filtering over all triples we restrict to a
+# handful of common predicates where this may occur.
+#
+SELECT DISTINCT ?s ?p ?o ?invalid_datatype_uri WHERE {
+  VALUES ?p { <http://purl.org/dc/terms/issued>
+              <http://purl.org/dc/terms/modified>
+              <http://purl.org/dc/terms/created> }
+  ?s ?p ?o .
+  BIND(DATATYPE(?o) AS ?invalid_datatype_uri)
+  FILTER(!(STRSTARTS(STR(?invalid_datatype_uri), "http://") || STRSTARTS(STR(?invalid_datatype_uri), "https://") ))
+
+} LIMIT 1000
