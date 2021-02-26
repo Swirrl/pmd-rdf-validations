@@ -1,0 +1,7 @@
+{:misc [{:source "swirrl/validations/misc/datatypes-are-uris.sparql"
+         :type :sparql
+         :name "datatypes-are-uris"
+         :description
+         "Datatype URIs must begin with http or https. This can catch
+         errors such as ^^<xsd:dateTime> instead of ^^xsd:dateTime."
+         }]}
