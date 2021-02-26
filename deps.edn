@@ -3,7 +3,7 @@
            :misc {:extra-deps {swirrl/validations.pmd-qb {:local/root "misc"}}}
 
            :validate {:extra-deps { swirrl/rdf-validator {:git/url "https://github.com/Swirrl/rdf-validator.git"
-                                                          :sha "5ecc5fa5c696cfa8ac5bb99c250e5b0c9b083f85"
+                                                          :sha "c85338c44be9f7f9726c30dca4aa47ef8bd9cfe6"
                                                           }
                                    ;; Import log4j2 as the logging backend
                                    org.apache.logging.log4j/log4j-api {:mvn/version "2.11.1"}
