@@ -133,7 +133,11 @@
 	 :source "swirrl/validations/pmd4/SELECT_RecordsMustBeInACatalog.sparql"
 	 :type :sparql
 	 :name "RecordsMustBeInACatalog"}
-        {
-	 :source "swirrl/validations/pmd4/SELECT_TopConceptOfObjectMustBeAConceptScheme.sparql"
+        {:source "swirrl/validations/pmd4/SELECT_TopConceptOfObjectMustBeAConceptScheme.sparql"
 	 :type :sparql
-	 :name "TopConceptOfObjectMustBeAConceptScheme"}]}
+	 :name "TopConceptOfObjectMustBeAConceptScheme"}
+        {:source "swirrl/validations/pmd4/hierarchical-scheme.sparql"
+	 :type :sparql
+	 :name "hierarchical-scheme"
+         :description "Concept Schemes with a skos:narrower hierarchy must define at least one skos:hasTopConcept"}
+        ]}

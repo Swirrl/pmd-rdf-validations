@@ -1,0 +1,10 @@
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?scheme {
+  ?concept skos:inScheme ?scheme ;
+           skos:narrower ?narrower .
+
+  FILTER NOT EXISTS {
+    ?scheme skos:hasTopConcept ?top_concept .
+  }
+}
