@@ -42,10 +42,6 @@
 	 :type :sparql
 	 :name "DatasetContentsIsCorrectType"}
         {
-	 :source "swirrl/validations/pmd4/SELECT_DatasetExactlyOneContents.sparql"
-	 :type :sparql
-	 :name "DatasetExactlyOneContents"}
-        {
 	 :source "swirrl/validations/pmd4/SELECT_DatasetExactlyOneGraph.sparql"
 	 :type :sparql
 	 :name "DatasetExactlyOneGraph"}
@@ -54,13 +50,13 @@
 	 :type :sparql
 	 :name "DatasetExactlyOneIssuedDate"}
         {
-	 :source "swirrl/validations/pmd4/SELECT_DatasetExactlyOneLabel.sparql"
-	 :type :sparql
-	 :name "DatasetExactlyOneLabel"}
-        {
 	 :source "swirrl/validations/pmd4/SELECT_DatasetExactlyOneModifiedDate.sparql"
 	 :type :sparql
 	 :name "DatasetExactlyOneModifiedDate"}
+        {
+	 :source "swirrl/validations/pmd4/SELECT_DatasetExactlyOneTitle.sparql"
+	 :type :sparql
+	 :name "DatasetExactlyOneTitle"}
         {
 	 :source "swirrl/validations/pmd4/SELECT_DatasetGraphIsIri.sparql"
 	 :type :sparql
@@ -70,9 +66,9 @@
 	 :type :sparql
 	 :name "DatasetMaxOneContactPoint"}
         {
-	 :source "swirrl/validations/pmd4/SELECT_DatasetMaxOneContributor.sparql"
+	 :source "swirrl/validations/pmd4/SELECT_DatasetMaxOneContents.sparql"
 	 :type :sparql
-	 :name "DatasetMaxOneContributor"}
+	 :name "DatasetMaxOneContents"}
         {
 	 :source "swirrl/validations/pmd4/SELECT_DatasetMaxOneCreator.sparql"
 	 :type :sparql
@@ -105,10 +101,6 @@
 	 :source "swirrl/validations/pmd4/SELECT_RecordExactlyOneIssuedDate.sparql"
 	 :type :sparql
 	 :name "RecordExactlyOneIssuedDate"}
-        {
-	 :source "swirrl/validations/pmd4/SELECT_RecordExactlyOneLabel.sparql"
-	 :type :sparql
-	 :name "RecordExactlyOneLabel"}
         {
 	 :source "swirrl/validations/pmd4/SELECT_RecordExactlyOneMetadataGraph.sparql"
 	 :type :sparql
