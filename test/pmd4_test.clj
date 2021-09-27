@@ -18,3 +18,9 @@
     #{{:count 0N :dataset (URI. "http://test/title/0#fail")}
       {:count 2N :dataset (URI. "http://test/title/2#fail")}}))
 
+(deftest dataset-min-one-graph
+  (test-validation
+    "pmd4/src/swirrl/validations/pmd4/SELECT_DatasetMinOneGraph.sparql"
+    "test/pmd4/swirrl/validations/pmd4/SELECT_DatasetMinOneGraph.ttl"
+    #{{:dataset (URI. "http://test/graph/0#fail")}}))
+

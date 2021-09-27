@@ -1,0 +1,11 @@
+@prefix pmdcat: <http://publishmydata.com/pmdcat#> .
+
+<http://test/graph/0#fail> a pmdcat:Dataset .
+
+<http://test/graph/1> a pmdcat:Dataset ;
+    pmdcat:graph <http://test/graph/1> .
+
+<http://test/graph/2> a pmdcat:Dataset ;
+    pmdcat:graph <http://test/graph/1> ;
+    pmdcat:graph <http://test/graph/2> .
+

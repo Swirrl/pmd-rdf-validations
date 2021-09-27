@@ -42,10 +42,6 @@
 	 :type :sparql
 	 :name "DatasetContentsIsCorrectType"}
         {
-	 :source "swirrl/validations/pmd4/SELECT_DatasetExactlyOneGraph.sparql"
-	 :type :sparql
-	 :name "DatasetExactlyOneGraph"}
-        {
 	 :source "swirrl/validations/pmd4/SELECT_DatasetExactlyOneIssuedDate.sparql"
 	 :type :sparql
 	 :name "DatasetExactlyOneIssuedDate"}
@@ -85,6 +81,10 @@
 	 :source "swirrl/validations/pmd4/SELECT_DatasetMaxOnePublisher.sparql"
 	 :type :sparql
 	 :name "DatasetMaxOnePublisher"}
+        {
+	 :source "swirrl/validations/pmd4/SELECT_DatasetMinOneGraph.sparql"
+	 :type :sparql
+	 :name "DatasetMinOneGraph"}
         {
 	 :source "swirrl/validations/pmd4/SELECT_DimensionsExactlyOneLabel.sparql"
 	 :type :sparql
