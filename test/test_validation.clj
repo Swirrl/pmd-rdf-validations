@@ -5,15 +5,19 @@
             [rdf-validator.test-cases :as tc]
             [rdf-validator.core :as rv]))
 
-(defn test-validation
-  "Test the sparql query in query-file returns the expected results when
-  run on the data in ttl-data-file."
-  [query-file ttl-data-file expected]
+(defn run-validation
+  "Run the sparql query in query-file against the data in ttl-data-file."
+  [query-file ttl-data-file]
   (let [test-case {:source query-file}
         repository (ep/parse-repository ttl-data-file)
         endpoint (ep/create-endpoint repository [])]
-    (is (= expected
-           (set (:errors (rv/run-test-case test-case {} endpoint)))))))
+    (rv/run-test-case test-case {} endpoint)))
+
+(defn test-validation
+  "Check the (unordered) errors from run-validation are the same as expected."
+  [query-file ttl-data-file expected]
+  (let [result (run-validation query-file ttl-data-file)]
+    (is (= expected (set (:errors result))))))
 
 (defn run-validation-suite
   "Run the validation in suite-source-file (e.g. rdf-validator-suite.edn)
