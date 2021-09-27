@@ -25,7 +25,7 @@
     #{{:dataset (URI. "http://test/graph/0#fail")}}))
 
 ; Run the whole suite against removed validations.
-(deftest remove-dataset-exactly-one-label
+(deftest removed-validations
   (let [[summary results]
         (run-validation-suite "pmd4/src/rdf-validator-suite.edn"
                               "test/pmd4/swirrl/validations/pmd4/removed.ttl")]
