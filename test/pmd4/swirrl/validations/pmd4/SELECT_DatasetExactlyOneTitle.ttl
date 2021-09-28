@@ -1,17 +1,12 @@
 @prefix pmdcat: <http://publishmydata.com/pmdcat#> .
 @prefix dct:    <http://purl.org/dc/terms/> .
 
-<http://test/title/0#fail> a pmdcat:Dataset .
+<http://test/dataset/0#fail> a pmdcat:Dataset .
 
-<http://test/title/1/single-title> a pmdcat:Dataset ;
+<http://test/dataset/1> a pmdcat:Dataset ;
     dct:title "I have but one title!" .
 
-<http://test/title/1/duplicate-title> a pmdcat:Dataset ;
-    dct:title "I have the same title twice!" ;
-    dct:title "I have the same title twice!" .
-
-<http://test/title/2#fail> a pmdcat:Dataset ;
+<http://test/dataset/2#fail> a pmdcat:Dataset ;
     dct:title "I have two titles!" ;
     dct:title "They are different!" .
-
 

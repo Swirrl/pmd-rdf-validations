@@ -9,20 +9,20 @@
   (test-validation
     "pmd4/src/swirrl/validations/pmd4/SELECT_DatasetMaxOneContents.sparql"
     "test/pmd4/swirrl/validations/pmd4/SELECT_DatasetMaxOneContents.ttl"
-    #{{:count 2N :dataset (URI. "http://test/contents/2#fail")}}))
+    #{{:count 2N :dataset (URI. "http://test/dataset/2#fail")}}))
 
 (deftest dataset-exactly-one-title
   (test-validation
     "pmd4/src/swirrl/validations/pmd4/SELECT_DatasetExactlyOneTitle.sparql"
     "test/pmd4/swirrl/validations/pmd4/SELECT_DatasetExactlyOneTitle.ttl"
-    #{{:count 0N :dataset (URI. "http://test/title/0#fail")}
-      {:count 2N :dataset (URI. "http://test/title/2#fail")}}))
+    #{{:count 0N :dataset (URI. "http://test/dataset/0#fail")}
+      {:count 2N :dataset (URI. "http://test/dataset/2#fail")}}))
 
 (deftest dataset-min-one-graph
   (test-validation
     "pmd4/src/swirrl/validations/pmd4/SELECT_DatasetMinOneGraph.sparql"
     "test/pmd4/swirrl/validations/pmd4/SELECT_DatasetMinOneGraph.ttl"
-    #{{:dataset (URI. "http://test/graph/0#fail")}}))
+    #{{:dataset (URI. "http://test/dataset/0#fail")}}))
 
 ; Run the whole suite against removed validations.
 (deftest removed-validations
