@@ -1,6 +1,7 @@
-(ns pmd4-test
+(ns pmd-validations.pmd4-test
   (:require [clojure.test :refer [deftest is]]
-            [test-validation :refer [test-validation run-validation-suite]]
+            [pmd-validations.test-validation
+             :refer [test-validation run-validation-suite]]
             [rdf-validator.endpoint :as ep]
             [rdf-validator.core :as rv])
   (:import [java.net URI]))

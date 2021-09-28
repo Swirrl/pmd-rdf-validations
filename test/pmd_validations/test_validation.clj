@@ -1,4 +1,4 @@
-(ns test-validation
+(ns pmd-validations.test-validation
   (:require [clojure.test :refer [is]]
             [clojure.java.io :as io]
             [rdf-validator.endpoint :as ep]
