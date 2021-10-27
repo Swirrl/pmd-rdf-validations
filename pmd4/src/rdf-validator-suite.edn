@@ -22,10 +22,6 @@
 	 :type :sparql
 	 :name "ConceptSchemeExactlyOneLabel"}
         {
-	 :source "swirrl/validations/pmd4/SELECT_ConceptSchemeMustHaveCatalogEntry.sparql"
-	 :type :sparql
-	 :name "ConceptSchemeMustHaveCatalogEntry"}
-        {
 	 :source "swirrl/validations/pmd4/SELECT_ConceptSchemesMaxZeroConceptsAsMembers.sparql"
 	 :type :sparql
 	 :name "ConceptSchemesMaxZeroConceptsAsMembers"}

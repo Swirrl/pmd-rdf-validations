@@ -31,5 +31,5 @@
         (run-validation-suite "pmd4/src/rdf-validator-suite.edn"
                               "test/pmd4/swirrl/validations/pmd4/removed.ttl")]
     (is (= [] (vec (filter #(not= :passed (:result %)) results))))
-    (is (= {:passed 34 :failed 0 :errored 0 :ignored 0} summary))))
+    (is (= {:passed 33 :failed 0 :errored 0 :ignored 0} summary))))
 

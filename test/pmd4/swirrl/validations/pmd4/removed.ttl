@@ -57,3 +57,8 @@
     dct:modified "yesterday" ;
     dct:issued "yesterday" .
 
+# ConceptSchemeMustHaveCatalogEntry
+
+<http://test/concept-scheme/1> a skos:ConceptScheme ;
+    rdfs:label "No catalog entries for me" .
+
