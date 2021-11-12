@@ -1,0 +1,64 @@
+@prefix pmdcat: <http://publishmydata.com/pmdcat#> .
+@prefix qb:     <http://purl.org/linked-data/cube#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix ui:     <http://www.w3.org/ns/ui#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+
+# When removing validations, put stuff in here that would not have passed the suite before removal.
+
+# DatasetExactlyOneLabel
+
+<http://test/dataset/label/0> a pmdcat:Dataset ;
+    dct:title "DatasetExactlyOneLabel 0" ;
+    dct:issued "yesterday" ;
+    dct:modified "yesterday" ;
+    pmdcat:graph <http://test/dataset/label/0> ;
+    pmdcat:datasetContents <http://test/dataset/label/0> .
+
+<http://test/dataset/label/2> a pmdcat:Dataset ;
+    rdfs:label "I have two different labels" ;
+    rdfs:label "I have two labels that are not the same" ;
+    dct:title "DatasetExactlyOneLabel 2" ;
+    dct:issued "yesterday" ;
+    dct:modified "yesterday" ;
+    pmdcat:graph <http://test/dataset/label/2> ;
+    pmdcat:datasetContents <http://test/dataset/label/2> .
+
+
+# DatasetMaxOneContributor
+
+<http://test/max-one-contributor/2> a pmdcat:Dataset ;
+    dct:contributor <http://test/max-one-contributor/2/1> ;
+    dct:contributor <http://test/max-one-contributor/2/2> ;
+    dct:title "DatasetMaxOneContributor 0" ;
+    dct:issued "yesterday" ;
+    dct:modified "yesterday" ;
+    pmdcat:graph <http://test/max-one-contributor/2> ;
+    pmdcat:datasetContents <http://test/max-one-contributor/2> .
+
+
+# RecordExactlyOneLabel
+
+<http://test/record/label/0> a dcat:CatalogRecord ;
+    pmdcat:metadataGraph <http://test/record/label/0> ;
+    dcat:record <http://test/record/label/0> ;
+    foaf:primaryTopic <http://test/dataset/label/0> ;
+    dct:modified "yesterday" ;
+    dct:issued "yesterday" .
+
+<http://test/record/label/2> a dcat:CatalogRecord ;
+    rdfs:label "My labels, they are numbered twice" ;
+    rdfs:label "Two is the number of labels for me" ;
+    pmdcat:metadataGraph <http://test/record/label/2> ;
+    dcat:record <http://test/record/label/2> ;
+    foaf:primaryTopic <http://test/dataset/label/0> ;
+    dct:modified "yesterday" ;
+    dct:issued "yesterday" .
+
+# ConceptSchemeMustHaveCatalogEntry
+
+<http://test/concept-scheme/1> a skos:ConceptScheme ;
+    rdfs:label "No catalog entries for me" .
+

@@ -26,7 +26,7 @@ WHERE {
     UNION
     {
         # Observations with more than one value of the same measure type
-        SELECT ?obs (COUNT(?val) AS ?count ) {
+        SELECT ?obs (COUNT(distinct ?val) AS ?count ) {
             ?obs qb:dataSet/qb:structure ?dsd ;
                  qb:measureType ?measure .
             ?obs ?measure ?val .

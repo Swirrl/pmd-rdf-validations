@@ -5,11 +5,11 @@ PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?concept ?count {
     {
-        SELECT ?concept (COUNT(?lbl) AS ?count) 
+        SELECT ?concept (COUNT(DISTINCT ?lbl) AS ?count)
         WHERE {
-        { 
+        {
             ?concept a skos:Concept .
-            ?concept rdfs:label ?lbl 
+            ?concept rdfs:label ?lbl
         }
         }
         GROUP BY ?concept
