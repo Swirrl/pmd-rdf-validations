@@ -1,7 +1,8 @@
 {:pmd4
  [{:source "swirrl/validations/pmd4/SELECT_AllAttributesAndDimensionsMustHaveCodeList.sparql"
 	 :type :sparql
-	 :name "AllAttributesAndDimensionsMustHaveCodeList"}
+	 :name "AllAttributesAndDimensionsMustHaveCodeList"
+	 :description "Enumerate component property values to support efficient streaming of downloads."}
 	{:source "swirrl/validations/pmd4/SELECT_CatalogEntryInAtMostOneCatalog.sparql"
    :type :sparql
    :description "A catalog entry should be in at most be in one catalog."
