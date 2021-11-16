@@ -1,18 +1,27 @@
 {:pmd4
  [{:source "swirrl/validations/pmd4/SELECT_AllAttributesAndDimensionsMustHaveCodeList.sparql"
-	 :type :sparql
-	 :name "AllAttributesAndDimensionsMustHaveCodeList"
-	 :description "Enumerate component property values to support efficient streaming of downloads."}
-	{:source "swirrl/validations/pmd4/SELECT_CatalogEntryInAtMostOneCatalog.sparql"
+   :type :sparql
+   :name "AllAttributesAndDimensionsMustHaveCodeList"
+   :description "Enumerate component property values to support efficient streaming of downloads."}
+  {:source "swirrl/validations/pmd4/SELECT_CatalogEntryInAtMostOneCatalog.sparql"
    :type :sparql
    :description "A catalog entry should be in at most be in one catalog."
    :name "CatalogEntryInAtMostOneCatalog"}
   {:source "swirrl/validations/pmd4/SELECT_BroaderObjectsMustBeAConcept.sparql"
    :type :sparql
    :name "BroaderObjectsMustBeAConcept"}
-  {:source "swirrl/validations/pmd4/SELECT_ConceptExactlyOneLabel.sparql"
+  {:source "swirrl/validations/pmd4/SELECT_ConceptMinOneLabel.sparql"
    :type :sparql
-   :name "ConceptExactlyOneLabel"}
+   :name "ConceptMinOneLabel"
+   :description "A concept should have a label so it can be displayed on the user interface."}
+  {:source "swirrl/validations/pmd4/SELECT_ConceptMaxOnePrefLabelPerLanguage.sparql"
+   :type :sparql
+   :name "ConceptMaxOnePrefLabelPerLanguage"
+   :description "A concept should have no more than one distinct preferred label per language."}
+  {:source "swirrl/validations/pmd4/SELECT_ConceptMaxOneLabelIfNoPrefLabel.sparql"
+   :type :sparql
+   :name "ConceptMaxOneLabelIfNoPrefLabel"
+   :description "Without identifying a preferred label you'll have no explicit control over which label is displayed."}
   {:source "swirrl/validations/pmd4/SELECT_ConceptMaxOneComment.sparql"
    :type :sparql
    :name "ConceptMaxOneComment"}

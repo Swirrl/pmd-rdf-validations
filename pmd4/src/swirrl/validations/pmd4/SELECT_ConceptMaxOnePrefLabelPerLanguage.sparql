@@ -1,0 +1,10 @@
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?concept ?language (COUNT(DISTINCT(?label)) AS ?label_count) WHERE {
+  ?concept a skos:Concept;
+    skos:prefLabel ?label .
+
+  BIND(LANG(?label) as ?language)
+}
+GROUP BY ?concept ?language
+HAVING (?label_count > 1)
