@@ -31,6 +31,10 @@
   {:source "swirrl/validations/pmd4/SELECT_ConceptMinOneScheme.sparql"
    :type :sparql
    :name "ConceptMinOneScheme"}
+  {:source "swirrl/validations/pmd4/SELECT_ConceptBothBroaderAndNarrower.sparql"
+   :type :sparql
+   :name "ConceptBothBroaderAndNarrower"
+   :description "Both broader and narrower relations should be present so we don't need to generate the entailments."}
   {:source "swirrl/validations/pmd4/SELECT_ConceptSchemeExactlyOneLabel.sparql"
    :type :sparql
    :name "ConceptSchemeExactlyOneLabel"}

@@ -1,0 +1,22 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+# If a broader or narrower relation is present than
+# the other corresponding relation should be too
+# This obviates the need to do entailment with queries
+# or reasoning
+
+SELECT ?broader ?narrower WHERE {
+  {
+    ?broader skos:narrower ?narrower .
+
+    FILTER NOT EXISTS {
+      ?narrower skos:broader ?broader .
+    }
+  } UNION {
+    ?narrower skos:broader ?broader .
+
+    FILTER NOT EXISTS {
+      ?broader skos:narrower ?narrower .
+    }
+  }
+}
