@@ -86,6 +86,10 @@
   {:source "swirrl/validations/pmd4/SELECT_DatasetMaxOnePublisher.sparql"
    :type :sparql
    :name "DatasetMaxOnePublisher"}
+  {:source "swirrl/validations/pmd4/dataset-metadata-objects-are-labelled.sparql"
+   :type :sparql
+   :name "DatasetMetadataObjectsAreLabelled"
+   :description "Where the dataset metadata refers to resources we ought to display labels instead of URIs."}
   {:source "swirrl/validations/pmd4/SELECT_DimensionsExactlyOneLabel.sparql"
    :type :sparql
    :name "DimensionsExactlyOneLabel"}
