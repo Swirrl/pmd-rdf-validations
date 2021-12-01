@@ -35,3 +35,9 @@ As the [RDF Validator](https://github.com/Swirrl/rdf-validator) supports finding
 ## Trouble shooting
 
 - Make sure that the `:sha` values in your `deps.edn` match the latest commit SHAs for this [pmd-rdf-validations repo](https://github.com/Swirrl/pmd-rdf-validations/commits/master) and the [rdf-validator repo](https://github.com/Swirrl/rdf-validator/commits/master) respectively.
+
+# Licence
+
+The MIT License (MIT)
+
+Copyright (C) 2021 Swirrl IT LTD
