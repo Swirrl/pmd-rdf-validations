@@ -50,7 +50,7 @@
   {:source "swirrl/validations/pmd4/SELECT_DatasetContentsIsCorrectType.sparql"
    :type :sparql
    :name "DatasetContentsIsCorrectType"}
-  {:source "swirrl/validations/pmd4/SELECT_DatasetMaxOneIssuedDate.sparql"
+  {:source "swirrl/validations/pmd4/SELECT_DatasetExactlyOneIssuedDate.sparql"
    :type :sparql
    :name "DatasetExactlyOneIssuedDate"}
   {:source "swirrl/validations/pmd4/SELECT_DatasetMaxOneModifiedDate.sparql"
