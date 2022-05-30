@@ -3,13 +3,13 @@ PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 PREFIX ui:      <http://www.w3.org/ns/ui#>
 PREFIX dcat:    <http://www.w3.org/ns/dcat#>
 PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
-PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX dct:     <http://purl.org/dc/terms/> 
 PREFIX pmdcat:  <http://publishmydata.com/pmdcat#>
 
-SELECT ?dataset (COUNT(DISTINCT ?o) AS ?count)
-WHERE {
+SELECT ?dataset {
     ?dataset a pmdcat:Dataset .
-    ?dataset pmdcat:markdownDescription ?o
+    FILTER NOT EXISTS {
+        ?dataset pmdcat:graph ?o
+    }
 }
-GROUP BY ?dataset
-HAVING (?count > 1)
+

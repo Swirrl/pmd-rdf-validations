@@ -7,7 +7,7 @@ PREFIX owl:     <http://www.w3.org/2002/07/owl#>
 
 SELECT ?obs ?dim (?v AS ?valueNotInCodeList) 
 WHERE {
-    ?obs qb:dataSet/qb:structure/qb:component/qb:componentProperty ?dim .
+    ?obs qb:dataSet/qb:structure/qb:component/qb:dimension ?dim .
     ?dim a qb:DimensionProperty ;
         qb:codeList ?list .
     ?list a skos:ConceptScheme .

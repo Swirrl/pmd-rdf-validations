@@ -5,15 +5,15 @@ PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?scheme ?count ?lbl  {
     {
-        SELECT ?scheme ?lbl (COUNT(?lbl) AS ?count) 
+        SELECT ?scheme ?lbl (COUNT(DISTINCT ?lbl) AS ?count)
         WHERE {
-        { 
+        {
             ?scheme a skos:ConceptScheme .
             ?scheme rdfs:label ?lbl, ?lbl2
             FILTER(?lbl != ?lbl2)
         }
         }
-        GROUP BY ?scheme ?lbl 
+        GROUP BY ?scheme ?lbl
         HAVING (?count > 1)
     }
     UNION {

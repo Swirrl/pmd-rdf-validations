@@ -1,0 +1,42 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?comp_prop WHERE {
+  VALUES ?comp_kind {
+    qb:attribute
+    qb:dimension
+    # measures don't need to be coded
+  }
+  
+  # find all attributes and dimensions used in cubes
+  ?dsd a qb:DataStructureDefinition .
+  ?dsd qb:component [?comp_kind ?comp_prop] .
+
+  # ones with codelists are valid
+  FILTER NOT EXISTS {
+    ?comp_prop qb:codeList ?cs .
+  }
+
+  # ignore the measure type dimension
+  FILTER (?comp_prop != qb:measureType)
+
+  # ignore attribute properties with literal values
+  FILTER NOT EXISTS {
+    ?comp_prop a owl:DatatypeProperty .
+  }
+}
+
+# PMD needs to enumerate the values of attribute and dimension properties
+# in order to efficiently stream downloads. These enumerations are used to
+# fetch labels ahead of time to avoid having to join in queries that are
+# repeated many times.
+# 
+# We ignore the measure type dimension (which can be enumerated from the
+# component specifications in the data structure definition) and properties
+# that have literal values.
+#
+# Not including these links will result in downloads that contain
+# URI's rather than labels.
