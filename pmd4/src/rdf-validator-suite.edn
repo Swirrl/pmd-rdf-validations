@@ -55,7 +55,7 @@
    :name "DatasetExactlyOneIssuedDate"}
   {:source "swirrl/validations/pmd4/SELECT_DatasetMaxOneModifiedDate.sparql"
    :type :sparql
-   :name "DatasetExactlyOneModifiedDate"}
+   :name "DatasetMaxOneModifiedDate"}
   {:source "swirrl/validations/pmd4/SELECT_DatasetExactlyOneTitle.sparql"
    :type :sparql
    :name "DatasetExactlyOneTitle"}
@@ -99,15 +99,9 @@
   {:source "swirrl/validations/pmd4/SELECT_NarrowerObjectsMustBeAConcept.sparql"
    :type :sparql
    :name "NarrowerObjectsMustBeAConcept"}
-  {:source "swirrl/validations/pmd4/SELECT_RecordExactlyOneIssuedDate.sparql"
-   :type :sparql
-   :name "RecordExactlyOneIssuedDate"}
   {:source "swirrl/validations/pmd4/SELECT_RecordExactlyOneMetadataGraph.sparql"
    :type :sparql
    :name "RecordExactlyOneMetadataGraph"}
-  {:source "swirrl/validations/pmd4/SELECT_RecordExactlyOneModifiedDate.sparql"
-   :type :sparql
-   :name "RecordExactlyOneModifiedDate"}
   {:source "swirrl/validations/pmd4/SELECT_RecordExactlyOnePrimaryTopic.sparql"
    :type :sparql
    :name "RecordExactlyOnePrimaryTopic"}
