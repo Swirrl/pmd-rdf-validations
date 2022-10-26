@@ -1,0 +1,9 @@
+PREFIX qb:      <http://purl.org/linked-data/cube#>
+
+SELECT ?dim 
+{
+    ?ds qb:structure/qb:component/qb:dimension ?dim .
+    FILTER NOT EXISTS {
+        ?dim a qb:DimensionProperty .
+    }
+}

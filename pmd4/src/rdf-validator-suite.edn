@@ -90,6 +90,10 @@
    :type :sparql
    :name "DatasetMetadataObjectsAreLabelled"
    :description "Where the dataset metadata refers to resources we ought to display labels instead of URIs."}
+  {:source "swirrl/validations/pmd4/SELECT_DimensionsConnectedToDataset.sparql"
+   :type :sparql
+   :name "DimensionsConnectedToDataset"
+   :description "Checks dimensions are connected to the DataCube and typed to be a qb:Dimension"}
   {:source "swirrl/validations/pmd4/SELECT_DimensionsExactlyOneLabel.sparql"
    :type :sparql
    :name "DimensionsExactlyOneLabel"}
