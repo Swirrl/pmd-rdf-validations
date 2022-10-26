@@ -1,0 +1,18 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?concept ?label1 ?label2 WHERE {
+  ?concept a skos:Concept;
+    rdfs:label ?label1, ?label2 .
+
+  FILTER (STR(?label1) != STR(?label2)) # ignore languages
+
+  FILTER NOT EXISTS {
+    ?concept skos:prefLabel ?prefLabel .
+  }
+}
+
+# A concept can provide multiple different labels as
+# long as a preferred label is identified.
+#
+# Without this you can't be explicit about which label PMD should choose. 

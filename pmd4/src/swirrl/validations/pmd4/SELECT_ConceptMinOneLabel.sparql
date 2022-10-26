@@ -1,0 +1,17 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?concept WHERE {
+  ?concept a skos:Concept .
+
+  FILTER NOT EXISTS {
+    ?concept skos:prefLabel ?prefLabel .
+  }
+
+  FILTER NOT EXISTS {
+    ?concept rdfs:label ?label .
+  }
+}
+
+# A concept can provide a label using either rdfs or skos
+# If both are provided, the pref label will take precedence

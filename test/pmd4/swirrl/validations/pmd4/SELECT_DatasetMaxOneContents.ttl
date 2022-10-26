@@ -1,0 +1,14 @@
+@prefix pmdcat: <http://publishmydata.com/pmdcat#> .
+
+<http://test/contents/1> a pmdcat:DatasetContents .
+<http://test/contents/2> a pmdcat:DatasetContents .
+
+<http://test/dataset/0> a pmdcat:Dataset .
+
+<http://test/dataset/1> a pmdcat:Dataset ;
+    pmdcat:datasetContents <http://test/contents/1> .
+
+<http://test/dataset/2#fail> a pmdcat:Dataset ;
+    pmdcat:datasetContents <http://test/contents/1> ;
+    pmdcat:datasetContents <http://test/contents/2> .
+

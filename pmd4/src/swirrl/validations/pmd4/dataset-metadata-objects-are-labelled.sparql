@@ -1,0 +1,27 @@
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX pmdcat:  <http://publishmydata.com/pmdcat#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?dataset ?metapred ?metaobj
+WHERE {
+  VALUES ?metapred { 
+    dcat:theme
+    dct:publisher
+    dct:creator
+    dct:contributor
+    dct:license
+  }
+
+  ?dataset a pmdcat:Dataset;
+    ?metapred ?metaobj .
+  
+  FILTER(isIRI(?metaobj))
+
+  FILTER NOT EXISTS {
+    ?metaobj rdfs:label ?label
+  }
+}
+
+# If a dataset metadata predicate has a resource as it's object then that
+# resource ought to be labelled

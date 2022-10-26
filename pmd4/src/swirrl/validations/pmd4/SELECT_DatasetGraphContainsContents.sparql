@@ -1,0 +1,21 @@
+PREFIX pmdcat:  <http://publishmydata.com/pmdcat#> 
+
+# pmdcat:datasetContents should either be in one of the pmdcat:graphs or the same thing
+
+SELECT ?dataset ?contents {
+  ?dataset a pmdcat:Dataset;
+    pmdcat:datasetContents ?contents;
+    .
+
+  FILTER NOT EXISTS {
+    ?dataset pmdcat:graph ?graph .
+
+    GRAPH ?graph {
+      ?contents ?p ?o .
+    }
+  }
+
+  MINUS {
+    ?dataset pmdcat:graph ?contents
+  }
+}

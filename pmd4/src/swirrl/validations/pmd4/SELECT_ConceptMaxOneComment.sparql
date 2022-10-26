@@ -4,9 +4,9 @@ PREFIX ui:      <http://www.w3.org/ns/ui#>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 
 
-SELECT ?concept (COUNT(?comment) AS ?count) 
+SELECT ?concept (COUNT(DISTINCT ?comment) AS ?count)
         WHERE {
-        { 
+        {
             ?concept a skos:Concept .
             ?concept rdfs:comment ?comment
         }

@@ -6,7 +6,7 @@ PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
 
 SELECT ?record ?count {
     {
-        SELECT ?record (COUNT(?pt) AS ?count) 
+        SELECT ?record (COUNT(DISTINCT ?pt) AS ?count)
         WHERE {
             ?record a dcat:CatalogRecord .
             ?record foaf:primaryTopic ?pt .
