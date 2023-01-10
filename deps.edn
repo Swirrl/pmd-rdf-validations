@@ -6,9 +6,9 @@
                                                           :sha "c85338c44be9f7f9726c30dca4aa47ef8bd9cfe6"
                                                           }
                                    ;; Import log4j2 as the logging backend
-                                   org.apache.logging.log4j/log4j-api {:mvn/version "2.11.1"}
-                                   org.apache.logging.log4j/log4j-core {:mvn/version "2.11.1"}
-                                   org.apache.logging.log4j/log4j-slf4j-impl {:mvn/version "2.11.1"}
+                                   org.apache.logging.log4j/log4j-api {:mvn/version "2.17.1"}
+                                   org.apache.logging.log4j/log4j-core {:mvn/version "2.17.1"}
+                                   org.apache.logging.log4j/log4j-slf4j-impl {:mvn/version "2.17.1"}
 
                                    }
                       :extra-paths ["."] ;; for log4j2.xml
